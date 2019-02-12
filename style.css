@@ -1,0 +1,44 @@
+html, body{
+    height: 100%;
+}
+
+
+.ProgressDot {
+    background-color: springgreen;
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin: 2px;
+    width: 10px;
+    opacity: 0;
+}
+
+.FadeTextBg {
+    background: rgba(50,50,50,0.8);
+    color: white;
+    height: 50%;
+    width: 100%;
+}
+
+.FadeText {
+    display: none;
+    font-size: 30px;
+    align-self: center;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.fas {
+    font-size: 50px;
+    
+}
+
+.centered {
+    text-align: center;
+    height: 100%;
+}
+
+
+
