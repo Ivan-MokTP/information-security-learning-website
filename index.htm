@@ -1,37 +1,47 @@
 <!doctype html>
 <html>
     <head>
-        <title>No Name</title>
+        <title>PuiTech</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <!-- Boostrap with JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
         <meta charset="UTF-8">
     </head>
+
     <body>  
-        <div class="centered">
-          
-          <h1> PuiTech E-Learning Platform </h1>
-          
-           <p> To connect to the webpage, please fill in the below information </p>
+        <div class="container-fluid centered">
+
+            <h1> PuiTech E-Learning Platform </h1>
+
+            <p> To connect to the webpage, please fill in the below information </p>
             <form method="post">
                 Username: <input type="text" id="username">
-                Password: <input type="password" id="password"><br><br>&#09;                <!--
-                <button onclick="ProgressBarAnimation()">Click</button> 
-                -->
-                <input type="button" value="Connect" onclick="CheckConnection(document.getElementById('username').value, document.getElementById('password').value)">
+                Password: <input type="password" id="password"><br><br>&#09;           
+                <input class="btn btn-info" type="button" value="Submit" onclick="CheckConnection(document.getElementById('username').value, document.getElementById('password').value)">
             </form>
-            <br><br>
-            <span class="inline"><i class="fas fa-desktop"></i></span>
-            <span class="ProgressBar inline"></span>
-            <span class="inline"><i class="fas fa-server"></i></span><br><br>
-            <div id="ResultText"></div><br><br>    
-            <div class="FadeTextBg">
-                <div class="FadeText" id="FadeText1"></div>
-                <div class="FadeText" id="FadeText2"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="inline col-1"><i class="fas fa-desktop"></i></div>
+                    <div class="col-4">
+                        <div class="progress active">
+                            <div id="fake-bar" class="progress-bar progress-bar-striped"></div>
+                        </div>
+                    </div>
+                    <div class="inline col-1"><i class="fas fa-server"></i></div>
+                </div>
+                <div id="status-text"></div><br><br>    
             </div>
-            
+            <div class="bg-dark text-white container-fluid" id="fade-bg">
+                <div class="fade-text" id="fade-text-1"></div>
+                <div class="fade-text" id="fade-text-2"></div>
+            </div>
+
         </div>
 
 

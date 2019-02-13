@@ -1,49 +1,51 @@
-
 //>>>>> Fake Progress Bar >>>>>
+time = 1500;
 
-var n = 28;
-var time = 1000;
-var progress = document.querySelector('.ProgressBar');
-var dot = [];
-var counter = 0;
+var fakeBar = document.getElementById('fake-bar')
+var statusText = document.getElementById('status-text')
 
-for (var i = 0; i < n; i++) {
-    dot[i] = document.createElement('div');
-    dot[i].classList.add('ProgressDot');
-    progress.appendChild(dot[i]);
-}
-//<<<<< Fake Progress Bar <<<<<
 function ProgressBarAnimation(){
-    var go = setInterval(function() {
-        if (counter >= n) clearInterval(go);
-        dot[counter].style.opacity = 1;
-        counter++;
-    }, time / n)
     
+    if (fakeBar.style.width == "100%"){
+        fakeBar.style.width = "0%";
+        fakeBar.classList.remove("bg-danger")
+        
+    }
+
+    $("#fake-bar").animate({
+        width: "100%"
+    }, time);    
+    statusText.innerHTML = "Sending request to the server ..."
+
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(null);
         }, time);
-    })
+    })  
 }
-
 //<<<<< Fake Progress Bar <<<<<
+
 //>>>>> Fake Connection >>>>>
 
 async function CheckConnection(username, password){
-    
+
     await ProgressBarAnimation();
-    
+
     display = document.createElement('span');
-    if (username == "admin" && password == "admin"){
-        document.getElementById('ResultText').innerHTML = "Connected";
-        document.getElementById('FadeText1').innerHTML = "Congratulations! You have just gained access to our website.";
-        document.getElementById('FadeText2').innerHTML = "blablabla";
-        
+    
+    // Access granted
+    if (username == "admin" && password == ""){
+        fakeBar.classList.add("bg-success")
+        statusText.innerHTML = "Access granted.";
+        document.getElementById('fade-text-1').innerHTML = "Congratulations! You have just gained access to our website.";
+        document.getElementById('fade-text-2').innerHTML = "blablabla";
+
         TextFade();
-        
+    // Access denied
     } else {
-        document.getElementById('ResultText').innerHTML = "Invalid information";
+        statusText.innerHTML = "Access denied!";
+        fakeBar.classList.add("bg-danger")
+        
     }
 }
 
@@ -51,11 +53,12 @@ async function CheckConnection(username, password){
 //>>>>> Text Fade >>>>>
 
 function TextFade(){
-    $(document).ready(function(){
-        $("#FadeText1").delay(1000).fadeIn("slow").delay(3000).fadeOut("slow", function(){
-            $("#FadeText2").fadeIn("slow").delay(3000);
-        })       
-    });
+    $("#fade-bg").fadeIn("slow", function(){
+        $("#fade-text-1").delay(300).fadeIn("slow").delay(3000).fadeOut("slow", function(){
+            $("#fade-text-2").fadeIn("slow").delay(3000);
+        })
+    })
+
 }          
 
 

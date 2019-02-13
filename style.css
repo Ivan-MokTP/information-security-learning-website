@@ -2,28 +2,21 @@ html, body{
     height: 100%;
 }
 
-
-.ProgressDot {
-    background-color: springgreen;
-    border-radius: 50%;
-    display: inline-block;
-    height: 10px;
-    margin: 2px;
-    width: 10px;
-    opacity: 0;
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
 }
 
-.FadeTextBg {
-    background: rgba(50,50,50,0.8);
-    color: white;
-    height: 50%;
-    width: 100%;
+#fade-bg {
+    display:none;
+    height: 400px;
+    line-height: 400px;
 }
 
-.FadeText {
+.fade-text {
     display: none;
     font-size: 30px;
-    align-self: center;
+    vertical-align: middle;    
 }
 
 .inline {
@@ -31,14 +24,19 @@ html, body{
 }
 
 .fas {
-    font-size: 50px;
-    
+    font-size: 45px;
 }
 
 .centered {
     text-align: center;
     height: 100%;
+    margin: auto;
 }
+
+.row{
+  align-items: center;
+}
+
 
 
 
