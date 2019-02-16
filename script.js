@@ -1,8 +1,9 @@
 //>>>>> Fake Progress Bar >>>>>
-time = 1500;
+connectTime = 1500;
 
 var fakeBar = document.getElementById('fake-bar')
 var statusText = document.getElementById('status-text')
+
 
 function ProgressBarAnimation(){
     
@@ -14,13 +15,13 @@ function ProgressBarAnimation(){
 
     $("#fake-bar").animate({
         width: "100%"
-    }, time);    
+    }, connectTime);    
     statusText.innerHTML = "Sending request to the server ..."
 
     return new Promise(resolve => {
         setTimeout(() => {
             resolve(null);
-        }, time);
+        }, connectTime);
     })  
 }
 //<<<<< Fake Progress Bar <<<<<
@@ -30,6 +31,7 @@ function ProgressBarAnimation(){
 async function CheckConnection(username, password){
 
     await ProgressBarAnimation();
+    
 
     display = document.createElement('span');
     
@@ -37,16 +39,24 @@ async function CheckConnection(username, password){
     if (username == "admin" && password == ""){
         fakeBar.classList.add("bg-success")
         statusText.innerHTML = "Access granted.";
+        //Remove connection panel
+        $("#connection-panel").slideUp(2000)
         document.getElementById('fade-text-1').innerHTML = "Congratulations! You have just gained access to our website.";
-        document.getElementById('fade-text-2').innerHTML = "blablabla";
+        document.getElementById('fade-text-2').innerHTML = "You identifed yourself as an legitimate user, therefore you can access the content of this website";
+        document.getElementById('fade-text-3').innerHTML = "This is called authentication"
 
-        TextFade();
     // Access denied
     } else {
-        statusText.innerHTML = "Access denied!";
         fakeBar.classList.add("bg-danger")
+        statusText.innerHTML = "Access denied!";   
+        document.getElementById('fade-text-1').innerHTML = "You seem to have entered invalid information.";
+        document.getElementById('fade-text-2').innerHTML = "Now try to login as an administrator";
+        document.getElementById('fade-text-3').innerHTML = "Type both username and password as 'admin' and submit again";
         
     }
+    
+    //Start fading text
+    TextFade();
 }
 
 //<<<<< Fake Connection <<<<<
@@ -55,11 +65,12 @@ async function CheckConnection(username, password){
 function TextFade(){
     $("#fade-bg").fadeIn("slow", function(){
         $("#fade-text-1").delay(300).fadeIn("slow").delay(3000).fadeOut("slow", function(){
-            $("#fade-text-2").fadeIn("slow").delay(3000);
+            $("#fade-text-2").fadeIn("slow").delay(3000).fadeOut("slow", function(){
+                $("#fade-text-3").fadeIn("slow")
+            })
         })
     })
 
 }          
-
 
 //<<<<< Text Fade <<<<<
