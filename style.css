@@ -9,8 +9,8 @@ html, body{
 
 #fade-bg {
     display:none;
-    height: 400px;
-    line-height: 400px;
+    height: 100%;
+    line-height: 300px;
 }
 
 .fade-text {

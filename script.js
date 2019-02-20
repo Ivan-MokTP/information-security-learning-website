@@ -3,13 +3,14 @@ connectTime = 1500;
 
 var fakeBar = document.getElementById('fake-bar')
 var statusText = document.getElementById('status-text')
+var texts;
 
 function ProgressBarAnimation(){
-    
+
     if (fakeBar.style.width == "100%"){
         fakeBar.style.width = "0%";
         fakeBar.classList.remove("bg-danger")
-        
+
     }
 
     $("#fake-bar").animate({
@@ -28,15 +29,14 @@ function ProgressBarAnimation(){
 //>>>>> Fake Connection >>>>>
 
 async function CheckConnection(username, password){
-    
+
     var sound = document.getElementById('sound-effect')
-    var texts;
 
     await ProgressBarAnimation();
-    
+
 
     display = document.createElement('span');
-    
+
     // Access granted
     if (username == "admin" && password == ""){
         fakeBar.classList.add("bg-success")
@@ -50,12 +50,17 @@ async function CheckConnection(username, password){
         document.getElementById('fade-text-3').innerHTML = "This is called authentication"
         */
         texts = [
-            "AAA",
-            "BBB",
-            "CCC"
+            {
+                text: "111",
+                duration: 3000
+            },
+            {
+                text: "222",
+                duration: 3000
+            }
         ]
 
-    // Access denied
+        // Access denied
     } else {
         fakeBar.classList.add("bg-danger")
         statusText.innerHTML = "Access denied!"; 
@@ -67,13 +72,22 @@ async function CheckConnection(username, password){
         document.getElementById('fade-text-3').innerHTML = "Type both username and password as 'admin' and submit again";
         */
         texts = [
-            "111",
-            "222",
-            "333"
+            {
+                text: "AAA",
+                duration: 3000
+            },
+            {
+                text: "BBB",
+                duration: 3000
+            },
+            {
+                text: "CCC",
+                duration: 3000
+            }
         ]
-        
+
     }
-    
+
     //Start fading text
     TextFade(texts);
 }
@@ -82,26 +96,23 @@ async function CheckConnection(username, password){
 //>>>>> Text Fade >>>>>
 
 function TextFade(texts){
-    /*
-    $("#fade-bg").fadeIn("slow", function(){
-        $("#fade-text-1").delay(300).fadeIn("slow").delay(3000).fadeOut("slow", function(){
-            $("#fade-text-2").fadeIn("slow").delay(3000).fadeOut("slow", function(){
-                $("#fade-text-3").fadeIn("slow")
-            })
+
+    var currentText = document.getElementById('fade')
+
+    $("#fade-bg").fadeIn("slow", function(){ 
+        currentText.innerHTML = texts[0].text;  
+        var i = 1
+        var timer = setInterval(function(){
+            currentText.innerHTML = texts[i].text
+            i++
+            if (i === texts.length){
+                clearInterval(timer)
+            }
+        }, 3900) 
+        $.each(texts, function(){ 
+            $(".fade-text").delay(300).fadeIn(300).delay(this.duration).fadeOut(300)
         })
     })
-    */
-    var text = document.getElementsByClassName("fade-text");
-    
-    $("#fade-bg").fadeIn("slow", function(){
-        $.each(texts, function(index, value){
-            text.innerHTML = value;
-            $(".fade-text").fadeIn("slow", function(){
-                var nxt = texts.next
-            })
-        
-    })
-
 }          
 
 //<<<<< Text Fade <<<<<
