@@ -44,20 +44,11 @@ async function CheckConnection(username, password){
         sound.src = "audio/Success.mp3"
         sound.play();
         $("#connection-panel").slideUp(2000) //Remove connection panel
-        /*
-        document.getElementById('fade-text-1').innerHTML = "Congratulations! You have just gained access to our website.";
-        document.getElementById('fade-text-2').innerHTML = "You identifed yourself as an legitimate user, therefore you can access the content of this website";
-        document.getElementById('fade-text-3').innerHTML = "This is called authentication"
-        */
+
         texts = [
-            {
-                text: "111",
-                duration: 3000
-            },
-            {
-                text: "222",
-                duration: 3000
-            }
+            "Congratulations! You have just gained access to our website.",
+            "You identifed yourself as an legitimate user, therefore you can access the content of this website",
+            "This is called authentication"
         ]
 
         // Access denied
@@ -66,24 +57,11 @@ async function CheckConnection(username, password){
         statusText.innerHTML = "Access denied!"; 
         sound.src = "audio/Fail.mp3"
         sound.play();
-        /*
-        document.getElementById('fade-text-1').innerHTML = "You seem to have entered invalid information.";
-        document.getElementById('fade-text-2').innerHTML = "Now try to login as an administrator";
-        document.getElementById('fade-text-3').innerHTML = "Type both username and password as 'admin' and submit again";
-        */
+        
         texts = [
-            {
-                text: "AAA",
-                duration: 3000
-            },
-            {
-                text: "BBB",
-                duration: 3000
-            },
-            {
-                text: "CCC",
-                duration: 3000
-            }
+            "You seem to have entered invalid information.",
+            "Now try to login as an administrator",
+            "Type both username and password as 'admin' and submit again"
         ]
 
     }
@@ -100,10 +78,10 @@ function TextFade(texts){
     var currentText = document.getElementById('fade')
 
     $("#fade-bg").fadeIn("slow", function(){ 
-        currentText.innerHTML = texts[0].text;  
+        currentText.innerHTML = texts[0];  
         var i = 1
         var timer = setInterval(function(){
-            currentText.innerHTML = texts[i].text
+            currentText.innerHTML = texts[i]
             i++
             if (i === texts.length){
                 clearInterval(timer)
@@ -113,6 +91,6 @@ function TextFade(texts){
             $(".fade-text").delay(300).fadeIn(300).delay(this.duration).fadeOut(300)
         })
     })
-}          
+}       
 
 //<<<<< Text Fade <<<<<
