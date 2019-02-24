@@ -93,7 +93,7 @@ div.mainframe {
     font-size: 20px;
 }
 
-li {
+ul>li {
     list-style: none;
 }
 
@@ -136,6 +136,10 @@ i.icon{
     font-weight: bold;
 }
 
+.italic{
+    font-style: italic;
+}
+
 .modern-button{
     background-color: transparent;
     background-repeat: no-repeat;
@@ -154,6 +158,16 @@ img.topic{
     width: 100%;
     border-radius: 20%;
     
+}
+
+#quiz{    
+    padding-left: 20px;    
+}
+
+img.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 

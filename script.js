@@ -126,42 +126,16 @@ window.onload = function(){
 //<<<<< Go To Home <<<<<
 //>>>>> Quiz >>>>>
 
-/*
-function generateQuiz(questions, quizContainer, resultContainer, submitButton){
-
-    var quizQuestions = [
-        {
-            question: "AAA",
-            answers: {
-                a: 'a',
-                b: 'b',
-                c: 'c'
-            },
-            correctAnswer: 'a'
-        }
-    ];
-
-    function showQuestions(questions, quizContainer){
-        var output = [];
-        var answers;
-
-        for(var i=0;i<questions.length;i++){
-            answers = [];
-            for (letter in questions[i].length)
-        }
-    }
-}
-*/
-
 var myQuestions = [
 	{
-		question: "What is 10/2?",
+		question: "Which of the follow is NOT an authentication factor?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			A: 'Fingerprint',
+			B: 'Eye Retina',
+			C: 'Password',
+            D: 'Skin pattern'
 		},
-		correctAnswer: 'b'
+		correctAnswer: 'd'
 	},
 	{
 		question: "What is 30/3?",
@@ -199,8 +173,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 				// ...add an html radio button
 				answers.push(
 					'<label>'
-						+ '<input type="radio" name="question'+i+'" value="'+letter+'">'
-						+ letter + ': '
+						+ '<input type="radio" name="question'+i+'" value="'+letter+'"> '
+						+ letter + ') '
 						+ questions[i].answers[letter]
 					+ '</label>'
 				);
@@ -208,8 +182,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 			// add this question and its answers to the output
 			output.push(
-				'<div class="question">' + questions[i].question + '</div>'
-				+ '<div class="answers">' + answers.join('') + '</div>'
+				'<div class="list-group-item"><div class="question">' + questions[i].question + '</div>'
+				+ '<div class="answers">' + answers.join('<br>') + '</div></div><br>'
 			);
 		}
 

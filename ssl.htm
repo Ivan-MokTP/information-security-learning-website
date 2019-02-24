@@ -22,37 +22,36 @@
             <div class="container text-dark mainframe text-justified">
                 <br>
                 <div class="title">
-                    Introduction to Authentication
+                    Secure Socket Layer
                 </div>
                 <div>
                     <div class="subtitle">
-                        What is Authentication?
+                        Security over Internet Communication
                     </div>
-                    <div class="row">
-                        <div class="col-9">
-                            <p class="para">
-                                Authentication is the process of identifying someone on the Internet. The reason for this is to provide access control to the users who want to access the required information. Before granted the information, the user has to prove his identity to the system. This is usually done by providing username/user id and password, which are known as login credentials. With the correct credential, the user is recognized and will be provided the requested information.
-                            </p>
-                            <p class="para">
-                                Taking facebook as an example. Every registered account is an identity, and is bound with a unique username(probably email) and a password. To prove an identity, the user has to provide the correct username and password. Since the password should be kept secret to only the user himeself, no other user can steal one's identity without knowing the password.
-                            </p>
-                        </div>
-                        <div class="col-3">
-                            <img class="topic" src="img/intro.jpg"/>
-                        </div>
-                    </div>
-
-                </div>
-                <div>
+                    <p class="para">
+                        Apart from identifying internet users, another kind of authentication called <span class="text-info">Secure Socket Layer</span>(SSL) are also widely adopted nowadays. SSL provides a secure channel between two machines or devices operating over the internet or an internal network. As such, only the sender and receiver in the channel can have access to the protected information contained within.
+                    </p>
+                    <p class="para">
+                        SSL consists of 2 important components - <span class="italic text-success">certificate</span> and <span class="italic text-warning">keys</span>. 
+                    </p>
+                    <ul>
+                        <li>- <span class="text-success">Certificate</span>: Contains basic information and a digital signature that can identify the client or server.</li>
+                        <li>- <span class="text-warning">Keys</span>: Used to establish a secured connection</li>
+                    </ul>
                     <div class="subtitle">
-                        Why is this important?
+                        Mutual Authentication
                     </div>
                     <p class="para">
-                        Authentication is important because it enables organizations to keep their networks secure by permitting only authenticated users (or processes) to access its protected resources, which may include computer systems, networks, databases, websites and other network-based applications or services.  
+                        SSL is usually a Mutual Authentication (or Two-Way Authentication) process. It means both server and client will have to send its certificate to another entity. 
                     </p>
-                    <p class="para">
-                        After successful authentication, the users will be granted the right to perform different levels of actions depending on the identity. Since only the authenticated users have the permission to perform certain actions, it provides access control over the system, making it secure and easy to manage user rights.
-                    </p>
+                    
+                    <img class="center" src="img/ssl.jpg"/>
+                    <ol>
+                        <li>Client connects to the web server secured with SSL. Then client requests the server to identfy itself.</li>
+                        <li>Server sends a copy of its certificate and its public key. Client responds by sending a copy of its certificate to the server. (Here completes the Mutual Authentication process.)</li>
+                        <li>Client validates the server's certifcate. Then client creates a temporary session key using server's public key, and sends it to server.</li>
+                        <li>Server decrypts the session key using its own private key. Now both entities conrtain the same session key. They now use the common session key to encrypt data and transmit through the channel.</li>
+                    </ol>
                 </div>
                 <div aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
