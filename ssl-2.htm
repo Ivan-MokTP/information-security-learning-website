@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <title>PuiTech</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <!-- Boostrap with JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- Body -->
+        <div class="container-fluid full-height">
+            <!-- Top bar -->
+            <div id="topbar"></div>
+            <!-- Main part -->
+            <div class="container text-dark mainframe text-justified">
+                <br>
+                <div class="title">
+                    Secure Socket Layer
+                </div>
+                <div>
+                    <div class="subtitle">
+                        Setting Up SSL
+                    </div>
+                    <p class="para">
+                        Before using SSL, both sides have to set up an initial communication in order to generate a seesion key. The seesion is shared by and only known to the two sides. After that the both sides will encrypt transmitting data with session key, hance securing all the data within.
+                    </p>
+                    <p class="para"> 
+                        In normal SSL, only Server Authentication is needed. The diagram is as follow:
+                    </p>
+                    <img class="center" src="img/ssl.jpg"/>
+                    <ol>
+                        <li>Client connects to the web server secured with SSL. Then client requests the server to identfy itself.</li>
+                        <li>Server sends a copy of its certificate and its public key. </li>
+                        <li>Client validates the server's certifcate. Then client creates a temporary session key using server's public key, and sends it to server.</li>
+                        <li>Server decrypts the session key using its own private key. Now both entities contain the same session key. They now use the common session key to encrypt data and transmit through the channel.</li>
+                    </ol>
+                </div>
+                <div aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="ssl.htm">Page 1</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link">Page 2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="ssl-3.htm">Page 3</a>
+                        </li>
+                        <button class="btn btn-dark" onclick="GoToHome()">Home</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

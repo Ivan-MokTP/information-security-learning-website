@@ -29,16 +29,18 @@
                         How Authentication Actually Works?
                     </div>
                     <p class="para">
-                        In the authentication process, the credentials provided by the 
-                    </p>
+                        During authentication, credentials provided by the user are compared to those on file in a database of authorized users' information either on the local operating system or through an authentication server. If the credentials match, and the authenticated entity is authorized to use the resource, the process is completed and the user is granted access. The permissions and folders returned define both the environment the user sees and the way he can interact with it, including hours of access and other rights such as the amount of resource storage space.</p>
+                    <p class="para">
+                        Traditionally, authentication was accomplished by the systems or resources being accessed; for example, a server would authenticate users using its own password system, implemented locally, using login IDs (user names) and passwords. Knowledge of the login credentials is assumed to guarantee that the user is authentic. Each user registers initially (or is registered by someone else, such as a systems administrator), using an assigned or self-declared password. On each subsequent use, the user must know and use the previously declared password.</p>
+
+                    <p class="para">
+                        However, the web's application protocols, HTTP and HTTPS, are stateless, meaning that strict authentication would require end users reauthenticate each time they access a resource using HTTPS. Rather than burden end users with that process for each interaction over the web, protected systems often rely on token-based authentication, in which authentication is performed once at the start of a session. The authenticating system issues a signed authentication token to the end-user application, and that token is appended to every request from the client.</p>
                 </div>
                 <div aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <li class="page-item"><a class="page-link" href="intro.htm">Page 1</a>
                         </li>
                         <li class="page-item active"><a class="page-link">Page 2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="intro-3.htm">Page 3</a>
                         </li>
                         <button class="btn btn-dark" onclick="GoToHome()">Home</button>
                     </ul>

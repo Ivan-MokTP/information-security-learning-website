@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <title>PuiTech</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <!-- Boostrap with JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- Body -->
+        <div class="container-fluid full-height">
+            <!-- Top bar -->
+            <div id="topbar"></div>
+            <!-- Main part -->
+            <div class="container text-dark mainframe text-justified">
+                <br>
+                <div class="title">
+                    Authentication Factors
+                </div>
+                <div>
+                    <div class="subtitle">
+                        Single Factor Authentication
+                    </div>
+                    <p class="para">
+                        Authenticating a user with a user ID and a password is usually considered the most basic type of authentication, and it depends on the user knowing two pieces of information: the user ID or username, and the password. Since this type of authentication relies on just one authentication factor, it is a type of single-factor authentication.  
+                    </p>
+                    <p class="para">
+                        After successful authentication, the users will be granted the right to perform different levels of actions depending on the identity. Since only the authenticated users have the permission to perform certain actions, it provides access control over the system, making it secure and easy to manage user rights.
+                    </p>
+                </div>
+                <div>
+                    <div class="subtitle">
+                        Two or Multi Factor Authentication
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <img class="left-img" src="img/2fa.jpg">
+                        </div>
+                        <div class="col-8">
+                            <p class="para">
+                                Adding authentication factors to the authentication process typically improves security. Strong authentication usually refers to authentication that uses at least two factors, where those factors are of different types. The distinction is important; since both username and password can be considered types of knowledge factor, basic username and password authentication could be said to use two knowledge factors to authenticate -- however, that would not be considered a form of two-factor authentication (2FA). Likewise for authentication systems that rely on "security questions," which are also "something you know," to supplement user ID and passwords. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <p class="para">
+                                Two-factor authentication usually depends on the knowledge factor combined with either a biometric factor or a possession factor like a security token. Multifactor authentication can include any type of authentication that depends on two or more factors, but an authentication process that uses a password plus two different types of biometric would not be considered three-factor authentication, although if the process required a knowledge factor, a possession factor and an inherence factor, it would be. Systems that call for those three factors plus a geographic or time factor are considered examples of four-factor authentication. 
+                            </p>
+                        </div>
+                        <div class="col-5">
+                            <iframe width="100%" height="200px" src="https://www.youtube.com/embed/0mvCeNsTa1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+                <div aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="factor.htm">Page 1</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link">Page 2</a>
+                        </li>
+                        <button class="btn btn-dark" onclick="GoToHome()">Home</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

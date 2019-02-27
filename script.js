@@ -47,7 +47,7 @@ async function CheckConnection(username, password){
     display = document.createElement('span');
 
     // Access granted
-    if (username == "admin" && password == ""){
+    if (username == "admin" && password == "admin"){
         fakeBar.classList.add("bg-success")
         statusText.innerHTML = "Access granted! Redirecting you to the home page.<br>(From now on you can click on the top-left header to skip this part)";
         sound.src = "audio/Success.mp3"
@@ -135,16 +135,47 @@ var myQuestions = [
 			C: 'Password',
             D: 'Skin pattern'
 		},
-		correctAnswer: 'd'
+		correctAnswer: 'D'
 	},
 	{
-		question: "What is 30/3?",
+		question: "In normal SSL, what does server have to provide to client during initial communication?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
+			A: 'Client\'s certificate & server\'s private key',
+			B: 'Server\'s public key only',
+			C: 'Server\'s certificate and server\'s public key',
+            D: 'Client\'s certificates & server\'s public key'
 		},
-		correctAnswer: 'c'
+		correctAnswer: 'C'
+	},
+    {
+		question: "Which of the following is NOT a class of Authentication Factor?",
+		answers: {
+			A: 'Consensus Factor',
+			B: 'Ownership Factor',
+			C: 'Knowledge Factor',
+            D: 'Inherence Factor'
+		},
+		correctAnswer: 'A'
+	},
+    {
+		question: "Which of the following about Authentication is TRUE?",
+		answers: {
+			A: 'Single Factor Authentication provides more security than Two Factor Authentication',
+			B: 'Authentication is the process of proving one\'s identity',
+			C: 'Authentication is rarely applied in today\s network',
+            D: 'Authenticated user only have to login once, then he can access the information next time without logging in'
+		},
+		correctAnswer: 'B'
+	},
+    {
+		question: "Which of the following statement is FALSE about SSL?",
+		answers: {
+			A: 'The letter \'s\' in HTTPS stands for \'secure\'',
+			B: 'Mutual Authentication requires both Server Authentication and Client Authentication',
+			C: 'The session generated is the same for both entities',
+            D: 'For normal SSL, only Client Authentication is needed to generate the session key'
+		},
+		correctAnswer: 'D'
 	}
 ];
 
@@ -182,8 +213,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 			// add this question and its answers to the output
 			output.push(
-				'<div class="list-group-item"><div class="question">' + questions[i].question + '</div>'
-				+ '<div class="answers">' + answers.join('<br>') + '</div></div><br>'
+				'<div class="list-group-item"><div class="question">Q' + (i+1) + '. ' + questions[i].question + '</div>'
+				+ '<br><div class="answers" style="font-size:17px">' + answers.join('<br>') + '</div></div><br>'
 			);
 		}
 
@@ -223,7 +254,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 		}
 
 		// show number of correct answers out of total
-		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+		resultsContainer.innerHTML = 'Score: ' + numCorrect + ' out of ' + questions.length;
 	}
 
 	// show questions right away

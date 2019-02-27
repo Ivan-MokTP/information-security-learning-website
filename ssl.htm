@@ -32,34 +32,44 @@
                         Apart from identifying internet users, another kind of authentication called <span class="text-info">Secure Socket Layer</span>(SSL) are also widely adopted nowadays. SSL provides a secure channel between two machines or devices operating over the internet or an internal network. As such, only the sender and receiver in the channel can have access to the protected information contained within.
                     </p>
                     <p class="para">
+                        How do we know if the website is communicating using SSL? This is pretty easy. Look at the address bar of your web browser:
+                        <br><img src="img/https.PNG"/><br>
+                        Notice the scheme http<span class="text-danger">s</span>. 's' stands for secure, meaning the communication uses SSL. 
+                    </p>
+                    <p class="para">
                         SSL consists of 2 important components - <span class="italic text-success">certificate</span> and <span class="italic text-warning">keys</span>. 
                     </p>
                     <ul>
                         <li>- <span class="text-success">Certificate</span>: Contains basic information and a digital signature that can identify the client or server.</li>
                         <li>- <span class="text-warning">Keys</span>: Used to establish a secured connection</li>
                     </ul>
-                    <div class="subtitle">
-                        Mutual Authentication
-                    </div>
                     <p class="para">
-                        SSL is usually a Mutual Authentication (or Two-Way Authentication) process. It means both server and client will have to send its certificate to another entity. 
+                        Two types of authentication are introduced in SSL:
                     </p>
-                    
-                    <img class="center" src="img/ssl.jpg"/>
-                    <ol>
-                        <li>Client connects to the web server secured with SSL. Then client requests the server to identfy itself.</li>
-                        <li>Server sends a copy of its certificate and its public key. Client responds by sending a copy of its certificate to the server. (Here completes the Mutual Authentication process.)</li>
-                        <li>Client validates the server's certifcate. Then client creates a temporary session key using server's public key, and sends it to server.</li>
-                        <li>Server decrypts the session key using its own private key. Now both entities conrtain the same session key. They now use the common session key to encrypt data and transmit through the channel.</li>
-                    </ol>
+                    <div class="row">
+                        <div class="col-8">
+                            <ul>
+                                <li>
+                                    <span class="bold">Server Authentication</span>: <span class="text-primary">Server identifying itself</span> to client using Server Certificate
+                                </li>
+                                <li>
+                                    <span class="bold">Client Authentication</span>: <span class="text-danger">Client identifying itselft</span> to server using Client Certificate
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <img src="img/cert.PNG" style="width: 100%"/>
+                            <img src="img/cert2.PNG" style="width: 100%"/>
+                        </div>
+                    </div>
                 </div>
                 <div aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                         <li class="page-item active"><a class="page-link">Page 1</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="intro-2.htm">Page 2</a>
+                        <li class="page-item"><a class="page-link" href="ssl-2.htm">Page 2</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="intro-3.htm">Page 3</a>
+                        <li class="page-item"><a class="page-link" href="ssl-3.htm">Page 3</a>
                         </li>
                         <button class="btn btn-dark" onclick="GoToHome()">Home</button>
                     </ul>

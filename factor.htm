@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <title>PuiTech</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <!-- Boostrap with JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- Body -->
+        <div class="container-fluid full-height">
+            <!-- Top bar -->
+            <div id="topbar"></div>
+            <!-- Main part -->
+            <div class="container text-dark mainframe text-justified">
+                <br>
+                <div class="title">
+                    Authentication Factors
+                </div>
+                <div>
+                    <div class="subtitle">
+                        What is an Authentication Factor
+                    </div>
+                    <p class="para">
+                        A factor is a type of authentication. When you claim to be someone, you need to provide further information to prove that you are who you say you are. For instance, suppose that you go to an ATM and use your credit card. After the card is inserted into the machine, it will be used to claim an identity. Now, how does the ATM know that whoever is in possession of the card is the owner of the card? It knows it by asking something that only the owner would be able to provide.
+                    </p>
+                    <p class="para">
+                        Below is an introduction to different authentication factors:
+                    </p>
+                    <div class="row">
+                       <div class="col-3"></div>
+                        <div class="col-7"><iframe width="560" height="315" src="https://www.youtube.com/embed/9Xx_S0WmXFY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    </div>
+                    
+                </div>
+                <div>
+                    <div class="subtitle">
+                        Authentication Factor Classes
+                    </div>
+                    <p class="para">
+                        The most we know about authentcation factor is a pair of username and password. However, there are more things that can be used as authentication factors. Bacically, the factors can fall into 3 categories:
+                    </p>
+                    <div class="row">
+                        <div class="col-9">
+                            <table class='table'>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Class</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Examples</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Knowledge Factor</th>
+                                        <td>Something the user <span class="italic bold">knows</span></td>
+                                        <td>Id/Password, PIN, pass phrase, security question</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Ownership Factor</th>
+                                        <td>Something the user <span class="italic bold">owns</span></td>
+                                        <td>ID card, security token, mobile devices</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Inherence Factor</th>
+                                        <td>Something the user <span class="italic bold">is</span></td>
+                                        <td>Fingerprint, eye retina, voice, signature</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-3">
+                            <img src="img/Methods.jpg" style="width: 100%">
+                        </div>
+                    </div>
+                </div>
+                <div aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item active"><a class="page-link">Page 1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="factor-2.htm">Page 2</a>
+                        </li>
+                        <button class="btn btn-dark" onclick="GoToHome()">Home</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="script.js" type="text/javascript"></script>
+    </body>
+</html>
