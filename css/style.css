@@ -1,0 +1,184 @@
+html, body{
+    height: 100%; 
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.title {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold; 
+    margin: 40px 0px 0px 0px;
+}
+
+.subtitle {
+    margin: 30px 0px 5px 30px;
+    display: block;
+    font-size: 30px;
+    font-style: italic;
+}
+
+p.para{
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.hint-word{
+    font-size: 30px;
+    font-weight: bold; 
+    padding-top: -20px
+}
+
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+#fade-bg {
+    display:none;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+}
+
+.fade-text {
+    display: none;
+    font-size: 30px;
+    vertical-align: middle;    
+}
+
+.inline {
+    display: inline-block;
+}
+
+.connect-icon {
+    font-size: 45px;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.text-justified{
+    text-align: justify;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.height50 {
+    height: 50%;
+}
+
+.height-auto {
+    height: auto;
+}
+
+.row {
+    align-items: center;
+}
+
+div.mainframe {
+    font-size: 20px;
+}
+
+ul>li {
+    list-style: none;
+}
+
+i.icon{
+    font-size: 60px;
+}
+
+#fadeup{
+    animation: fadeupAnimation 3s;
+}
+
+.hidden{
+    display: none;
+}
+
+@keyframes fadeupAnimation{
+    0% {opacity: 0;}
+    50% {opacity: 0}
+    100% {opacity: 1;}
+}
+
+.image-div{
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.text-frame{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: rgba(23, 162, 184, 0.5);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.modern-button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+img.ico{
+    background-color: rgb(240,240,240);
+    border-radius: 50%;
+    width: 40%;
+}
+
+
+img.topic{
+    border-radius: 20%;
+    width: 100%;
+}
+
+#quiz{    
+    padding-left: 20px;    
+}
+
+img.center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+}
+
+li + button{
+    margin-left: 20px;
+}
+
+table {
+    font-size: 17px;
+}
+
+img.left-img{
+    padding: 0 0 0 30px;
+    width: 100%;
+}
+
+
+
+
+
