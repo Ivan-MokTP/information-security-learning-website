@@ -1,0 +1,25 @@
+.heading {
+    font-weight: bold;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.fade-text {
+    display: none;
+    font-size: 30px;
+    vertical-align: middle; 
+}
+
+.fade-textbox{
+    height: 40vh;
+    vertical-align: middle;
+}
+
+.connect-icon {
+    font-size: 45px;
+}
+
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}

@@ -9,6 +9,7 @@
     <body>
         <div>
             <link rel="stylesheet" type="text/css" href="/css/style.css">
+            <link rel="stylesheet" type="text/css" href="/css/homeStyle.css">
             <!-- Font Awesome -->
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
             <!-- jQuery -->
@@ -17,20 +18,19 @@
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
         </div>
         <!-- Body -->
-        <div class="container-fluid full-height">
+        <div>
             <!-- Top bar -->
             <div id="topbar"></div>
             <!-- Transition slide --> 
-            <div class="container text-dark" id="slideup-section">
+            <div class="maindiv text-dark" id="slideup-section">
                 <div>
                     <!-- Title -->
-                    <span class="title text-centered">What's happening?</span>
+                    <span class="title">What's happening?</span>
                     <span class="hint-word text-black-50">What did I just do?</span>
-                    <div class="container-fluid mainframe">
-                        <div>
+                    <div class="subdiv">
+                        <p>
                             This website requires a specific identity called <span class="text-warning">administrator</span> to access.
-                        </div>
-                        <br>
+                        </p>
                         <ul>
                             <li>
                                 When you first entered random username and password, the server <span class="text-info">cannot recognize your identity</span>
@@ -42,64 +42,58 @@
                                 On the second time you entered the correct credentials, the server <span class="text-info">recognizes your identity</span> as an administrator, therefore <span class="text-success">granting access</span>.
                             </li>
                         </ul>
-                        <!-- Card -->
-                        <div class="text-frame border border-info rounded-lg">
-                            <div class="mainframe text-centered">This kind of identity validation is called</div>
-                            <div class="hint-word text-centered">"Authentication"</div>    
-                        </div>
-
-                        <!-- Transition button -->
-                        <div class="text-centered" id="fadeup">
-                            <div class="subsubtitle" style="margin-top: 50px">
-                                Want to learn more? Let's dive right in!
-                            </div>
-                            <button class="btn" onclick="SectionSlide()">
-                                <i class="fas fa-chevron-circle-up icon"></i> 
-                            </button> 
-                        </div>
                     </div>
+                </div>
+                <!-- Card -->
+                <div class="text-center card-frame border border-info rounded-lg">
+                    <span>This kind of identity validation is called<br>
+                        <span class="hint-word">"Authentication"</span>
+                    </span>  
+                </div>
+
+                <!-- Transition button -->
+                <div class="transition-container" id="fadeup">
+                    <div>Want to learn more? Let's dive right in!</div>
+                    <button class="btn" onclick="SectionSlide()">
+                        <i class="fas fa-chevron-circle-up icon"></i> 
+                    </button> 
                 </div>
             </div>
 
             <!-- Main part -->
-            <div class="container text-dark hidden mainframe" id="slidedown-section">
+            <div class="maindiv text-dark hidden" id="slidedown-section">
                 <!-- Intro -->
                 <div>
                     <div class="title">PuiAcademy</div>
-                    <div class='image-div'>
-                        <img src="img/HomeBanner.jpg" style="width: 100%"/>
-                    </div>
+                    <img class="banner" src="img/HomeBanner.jpg"/>
                     <p class="text-justify">On the Internet world, authentication is a fundamental element to identify a user accessing the website, especially those carrying sensitive information. The concept of authentication is easy to understand, but the logics are difficult to master. This website gives you the basic idea of authentication. Select any of the topic below that you are interested in!</p>
                 </div>
                 <hr>
                 <!-- Topic list -->
-                <div class="container">
+                <div class="text-center text-dark">
                     <br>
                     <div class="row">
-                        <div class="col-6 text-centered bold">
+                        <div class="col-3 bold">
                             <button class="modern-button" onclick="window.location='/Chapter/IntroductionToAuthentication/'">
-                                <img class="ico" src="img/icon/Idea.png">
+                                <img class="chapter-icon" src="/img/icon/Idea.png">
                                 <br>Introduction to Authentication
                             </button>
                         </div>
-                        <div class="col-6 text-centered bold">
-                            <button class="modern-button" onclick="window.location='Chapter/AuthenticationFactors/'">
-                                <img class="ico" src="img/icon/Notebook.png">
+                        <div class="col-3 bold">
+                            <button class="modern-button" onclick="window.location='/Chapter/AuthenticationFactors/'">
+                                <img class="chapter-icon" src="/img/icon/Notebook.png">
                                 <br>Authentication Factors
                             </button>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-6 text-centered bold">
-                            <button class="modern-button" onclick="window.location='Chapter/SecureSocketLayer/">
-                                <img class="ico" src="img/icon/Ssl.png">
+                        <div class="col-3 bold">
+                            <button class="modern-button" onclick="window.location='/Chapter/SecureSocketLayer/'">
+                                <img class="chapter-icon" src="/img/icon/Ssl.png">
                                 <br>Secure Socket Layer
                             </button>
                         </div>
-                        <div class="col-6 text-centered bold">
-                            <button class="modern-button" onclick="window.location='Chapter/Quiz/quiz1.html">
-                                <img class="ico" src="img/icon/Paper.png">
+                        <div class="col-3 bold">
+                            <button class="modern-button" onclick="window.location='/Chapter/Quiz/quiz1.html'">
+                                <img class="chapter-icon" src="/img/icon/Paper.png">
                                 <br>Quiz
                             </button>
                         </div>

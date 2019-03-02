@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>PuiTech</title>
+        <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/frontStyle.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- jQuery -->
@@ -14,16 +16,16 @@
 
     <body>
         <!-- Whole body -->
-        <div class="container-fluid text-centered full-height">
+        <div class="text-center">
             <!-- Top bar -->
             <div id="topbar"></div>
             <!-- Login part -->
-            <div class="text-centered text-dark height50">
+            <div class="text-center text-dark" style="height:52vh">
                <!-- Heading -->
                 <div class="heading">PuiAcademy</div>
                 <!-- Connection panel -->
                 <div id="connection-panel">
-                    <p> To connect to the webpage, please fill in the below information </p>
+                    <div class="text-center"> To connect to the webpage, please fill in the below information </div>
                     <form method="post">
                         Username: <input type="text" id="username">
                         Password: <input type="password" id="password"><br><br>&#09;           
@@ -32,24 +34,26 @@
                 </div>
                 <!-- Progress bar part -->
                 <div class="row justify-content-center">
-                    <div class="inline col-1"><i class="fas fa-desktop connect-icon"></i></div>
+                    <div class="inline-block col-1"><i class="fas fa-desktop connect-icon"></i></div>
                     <div class="col-4">
                         <div class="progress active">
                             <div id="fake-bar" class="progress-bar progress-bar-striped"></div>
                         </div>
                         <audio id="sound-effect"></audio>
                     </div>
-                    <div class="inline col-1"><i class="fas fa-server connect-icon"></i></div>
+                    <div class="inline-block col-1"><i class="fas fa-server connect-icon"></i></div>
                 </div>
                 <!-- Status text -->
                 <div id="status-text"></div>
             </div>
             <!-- Fade text part -->
-            <div class="container-fluid height-auto">
-            </div>
-            <div class="bg-info text-white container-fluid" id="fade-bg">
+            <!--<div class="bg-info text-white container-fluid" id="fade-bg">
                 <div class="fade-text" id="fade"></div>
+            </div>-->
+            <div class="fade-textbox">
+                <div class="text-dark fade-text" id="fade"></div>
             </div>
+            
         </div>
         <div>
             <!-- Import Scripts -->

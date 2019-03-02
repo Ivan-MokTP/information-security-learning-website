@@ -2,80 +2,72 @@
 <html>
     <head>
         <title>PuiTech</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <!-- Boostrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
-        <!-- Boostrap with JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
         <meta charset="UTF-8">
     </head>
     <body>
         <!-- Body -->
-        <div class="container-fluid full-height">
+        <div>
             <!-- Top bar -->
             <div id="topbar"></div>
             <!-- Main part -->
-            <div class="container text-dark mainframe text-justified">
-                <br>
+            <div class="maindiv text-dark">
                 <div class="title">
                     Secure Socket Layer
                 </div>
-                <div>
+                <div class="subdiv">
                     <div class="subtitle">
                         Security over Internet Communication
                     </div>
-                    <p class="para">
+                    <p>
                         Apart from identifying internet users, another kind of authentication called <span class="text-info">Secure Socket Layer</span>(SSL) are also widely adopted nowadays. SSL provides a secure channel between two machines or devices operating over the internet or an internal network. As such, only the sender and receiver in the channel can have access to the protected information contained within.
                     </p>
-                    <p class="para">
+                    <p>
                         How do we know if the website is communicating using SSL? This is pretty easy. Look at the address bar of your web browser:
-                        <br><img src="img/https.PNG"/><br>
+                        <br><img src="/img/Https.png"/><br>
                         Notice the scheme http<span class="text-danger">s</span>. 's' stands for secure, meaning the communication uses SSL. 
                     </p>
-                    <p class="para">
+                    <p>
                         SSL consists of 2 important components - <span class="italic text-success">certificate</span> and <span class="italic text-warning">keys</span>. 
                     </p>
                     <ul>
                         <li>- <span class="text-success">Certificate</span>: Contains basic information and a digital signature that can identify the client or server.</li>
                         <li>- <span class="text-warning">Keys</span>: Used to establish a secured connection</li>
                     </ul>
-                    <p class="para">
+                    <p>
                         Two types of authentication are introduced in SSL:
                     </p>
-                    <div class="row">
-                        <div class="col-8">
-                            <ul>
-                                <li>
-                                    <span class="bold">Server Authentication</span>: <span class="text-primary">Server identifying itself</span> to client using Server Certificate
-                                </li>
-                                <li>
-                                    <span class="bold">Client Authentication</span>: <span class="text-danger">Client identifying itselft</span> to server using Client Certificate
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-4">
-                            <img src="img/cert.PNG" style="width: 100%"/>
-                            <img src="img/cert2.PNG" style="width: 100%"/>
-                        </div>
-                    </div>
+                    <ul>
+                        <li>
+                            <span class="bold">Server Authentication</span>: <span class="text-primary">Server identifying itself</span> to client using Server Certificate
+                        </li>
+                        <li>
+                            <span class="bold">Client Authentication</span>: <span class="text-danger">Client identifying itselft</span> to server using Client Certificate
+                        </li>
+                    </ul>    
                 </div>
-                <div aria-label="Page navigation example">
+                <div aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item active"><a class="page-link">Page 1</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="ssl-2.htm">Page 2</a>
+                        <li class="page-item"><a class="page-link" href="2.html">Page 2</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="ssl-3.htm">Page 3</a>
+                        <li class="page-item"><a class="page-link" href="3.html">Page 3</a>
                         </li>
                         <button class="btn btn-dark" onclick="GoToHome()">Home</button>
                     </ul>
                 </div>
             </div>
         </div>
-        <script src="script.js" type="text/javascript"></script>
+        <div>
+            <!-- Scripts -->
+            <script src="/js/script.js" type="text/javascript"></script>
+        </div>
     </body>
 </html>

@@ -72,19 +72,17 @@ function TextFade(texts){
 
     var currentText = document.getElementById('fade')
 
-    $("#fade-bg").fadeIn("slow", function(){ 
-        currentText.innerHTML = texts[0];  
-        var i = 1
-        var timer = setInterval(function(){
-            currentText.innerHTML = texts[i]
-            i++
-            if (i === texts.length){
-                clearInterval(timer)
-            }
-        }, 3900) 
-        $.each(texts, function(){ 
-            $(".fade-text").delay(300).fadeIn(300).delay(3000).fadeOut(300)
-        })
+    currentText.innerHTML = texts[0];  
+    var i = 1
+    var timer = setInterval(function(){
+        currentText.innerHTML = texts[i]
+        i++
+        if (i === texts.length){
+            clearInterval(timer)
+        }
+    }, 3600) 
+    $.each(texts, function(){ 
+        $(".fade-text").delay(300).fadeIn(300).delay(3000)
     })
 }       
 
