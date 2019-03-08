@@ -1,10 +1,8 @@
 //>>>>> Load Top Bar >>>>>
-var topbar = document.getElementById('topbar')
 $('#topbar').load("/topbar.html")
 //<<<<< Load Top Bar <<<<<
 
 //>>>>> Go To Home >>>>>
-
 function GoToHome(){
     localStorage["shortcut"] = true;
     window.location = "/home.html"

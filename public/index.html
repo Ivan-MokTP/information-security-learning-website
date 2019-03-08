@@ -3,8 +3,8 @@
     <head>
         <title>PuiTech</title>
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
         <link rel="stylesheet" type="text/css" href="/css/frontStyle.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- jQuery -->
@@ -26,7 +26,7 @@
                 <!-- Connection panel -->
                 <div id="connection-panel">
                     <div class="text-center"> To connect to the webpage, please fill in the below information </div>
-                    <form method="post">
+                    <form>
                         Username: <input type="text" id="username">
                         Password: <input type="password" id="password"><br><br>&#09;           
                         <input class="btn btn-info" type="button" value="Submit" onclick="CheckConnection(document.getElementById('username').value, document.getElementById('password').value)">
@@ -47,9 +47,6 @@
                 <div id="status-text"></div>
             </div>
             <!-- Fade text part -->
-            <!--<div class="bg-info text-white container-fluid" id="fade-bg">
-                <div class="fade-text" id="fade"></div>
-            </div>-->
             <div class="fade-textbox">
                 <div class="text-dark fade-text" id="fade"></div>
             </div>

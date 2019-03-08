@@ -7,3 +7,8 @@
     margin-top: 50px !important;
     text-align: center !important;
 }
+
+.fa-angle-double-right, .fa-angle-double-left{
+    font-size: 30px !important;
+    vertical-align: middle;
+}

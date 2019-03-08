@@ -1,0 +1,10 @@
+Requirement:
+1. Nodejs [v10.15.2]
+2. Npm [v6.4.1]
+
+Steps:
+1. Install NodeJs.
+1.1 During NodeJs installation, Npm will be installed as well
+
+2. In the cmd, go to the project directory
+3. Type command "npm install". It will install all necessaey packages.

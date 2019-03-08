@@ -6,6 +6,7 @@ html, body{
     overflow-x: hidden;
 }
 
+
 .title {
     display: inline-block;
     font-size: 40px;
@@ -16,6 +17,13 @@ html, body{
     display: inline-block;
     font-size: 30px;
     font-style: italic;
+}
+
+.headline{
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-color: #343a40;
 }
 
 div.maindiv{
@@ -29,36 +37,10 @@ div.subdiv{
     margin: 20px 0px 0px 20px;
 }
 
-p{
-    font-size: 20px;
-    margin-left: 20px;
-    text-align: justify;
-}
-
 .hint-word{
     font-size: 30px;
     font-weight: bold; 
     padding-top: -20px
-}
-
-.inline-block {
-    display: inline-block;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.row {
-    align-items: center;
-}
-
-ul>li {
-    list-style: none;
-}
-
-li {
-    font-size: 18px;
 }
 
 i.icon{
@@ -96,14 +78,6 @@ i.icon{
     background-color: rgba(23, 162, 184, 0.5);
 }
 
-.bold{
-    font-weight: bold;
-}
-
-.italic{
-    font-style: italic;
-}
-
 .modern-button{
     background-color: transparent;
     background-repeat: no-repeat;
@@ -135,20 +109,68 @@ img.center{
     width: 50%;
 }
 
-li + button{
-    margin-left: 20px;
-}
-
-table {
-    font-size: 17px;
-}
-
 img.left-img{
     padding: 0 0 0 30px;
     width: 100%;
 }
 
-/* Topbar */
+/* ----- Apply-to-all -----*/
+
+table {
+    font-size: 17px;
+}
+
+li + button{
+    margin-left: 20px;
+}
+
+ul>li {
+    list-style: none;
+}
+
+li {
+    font-size: 18px;
+}
+
+p{
+    font-size: 20px;
+    margin-left: 20px;
+    text-align: justify;
+}
+
+thead{
+    font-style: italic;
+    border-top: 2px solid #343a40;
+    border-bottom: 2px solid #343a40;
+}
+
+/* ----- Single Style -----*/
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.row {
+    align-items: center;
+}
+
+/* ----- Topbar ----- */
 ul.topbar {
     list-style-type: none;
     margin: 0;
@@ -166,7 +188,7 @@ ul.topbar>li {
     float: left;    
 }
 
-li a {
+a.bar-item {
     display: block;
     color: white;
     text-align: center;
@@ -175,19 +197,52 @@ li a {
     height: 8vh;
 }
 
-li a:hover{
+a.bar-item:hover{
     background-color: rgb(3, 142, 164);
     cursor: pointer;
     text-decoration: none;
     color: white;
-    
 }
 
 .active {
     background-color: #4CAF50;
 }
 
+form.login{
+    width: 100%;
+    float: right;
+}
 
+form.login>span{
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
 
+form.login input{
+    width: 40%;  
+}
 
+input.styled{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(23, 162, 184);
+    border-radius: 10px;
+    box-shadow: none;
+    width: 100%;
+    padding: 5px 5px 5px 10px;
+    font-size: 14px !important;
+}
 
+.float-right{
+    float: right;
+}
+
+a.bar-form {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height: 8vh;
+}
