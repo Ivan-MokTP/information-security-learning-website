@@ -1,0 +1,11 @@
+/* ----- apply-to-all ------*/
+label{
+    display: inline!important;
+}
+
+input[type=text].fitb{
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-bottom-color: grey;
+    margin-right: 10px;
+}

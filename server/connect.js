@@ -11,4 +11,4 @@ pool.getConnection().then(function(connection){
     console.log("MySQL Connected");   
 })
 
-module.export = pool;
+module.exports = pool;

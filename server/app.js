@@ -1,12 +1,16 @@
+const mysql = require('promise-mysql');
 const http = require('http');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const db = require('./connect');
 const path = require('path');
+const bcrypt = require('bcrypt');
+
+const saltRound = 10;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../public'));
 
 /*
@@ -23,24 +27,34 @@ app.use((req, res, next) => {
   next();
 });*/
 
-
 app.get('/', function (req, res) {
     console.log("Localhost connected")
-    //res.sendFile(path.join(__dirname + '/../index.html'));
 });
 
-app.get('/')
-
+// Register
 app.post('/register', function(req, res){
-    var username = req.body.username,
-        password1 = req.body.password1,
-        password2 = req.body.password2;
-    if (password1 === password2){
-        res.send('Same')
-    } else {
-        res.send('Not same')
-    }
-})
+    var pass = false;
+    data = JSON.parse(req.query.data)
+    console.log(data);
+    var username = data.username,
+        password1 = data.password1,
+        password2 = data.password2;
+    if (password1 == password2){
+        pass = true;
+    } 
+    db.getConnection().then(function(conn){
+        //Check if username exists
+        conn.query("select username from wa_user where username=?", [username], function(err, result){
+            if (result.length == 0){
+                pass = true;
+            }
+        })
+        
+        //Insert user
+    }).catch(function(err) {
+        done(err);
+    });
+});
 
 const port = process.env.PORT || 3000;
 const server = http.createServer(app);

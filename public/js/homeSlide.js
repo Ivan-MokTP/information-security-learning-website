@@ -12,4 +12,11 @@ function SectionSlide(){
     })
 
 }
+
+window.onload = function(){   
+    if (localStorage.shortcut == "true"){
+        document.getElementById("slideup-section").classList.add("hidden")
+        document.getElementById("slidedown-section").classList.remove("hidden")
+    } 
+}
 //<<<<< Section Slide <<<<<
