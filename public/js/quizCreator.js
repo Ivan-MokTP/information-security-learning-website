@@ -31,20 +31,35 @@ var easyQuestion = [
     },
     {
         type: 1,
-        question: "Example t/f",
-        correctAnswer: 'True'
+        question: "To protect one's identity, the user must always keep both username and password secret",
+        correctAnswer: 'False'
     },
     {
         type: 2,
-        question: "Multi-MC",
+        question: "Which of the following(s) is/are correct about Authentication?",
         answers: {
-            A: 'T',
-            B: 'F',
-            C: 'T',
-            D: 'T',
-            E: 'F'
+            A: 'One user can have more than one account',
+            B: 'One account can have more than one username',
+            C: 'One account can have contain no password',
+            D: 'Different accounts can have the same username',
+            E: 'Different accounts can have the same password'
         },
-        correctAnswer: ['A', 'C', 'D']
+        correctAnswer: ['A', 'E']
+    },
+    {
+        type: 3,
+        question: "The /'s/' in HTTP/'S/' stands for _____.",
+        correctAnswer: ['secure']
+    },
+    {
+        type: 1,
+        question: "Knowledge Factor refers to something that the user knows",
+        correctAnswer: 'True'
+    },
+    {
+        type: 1,
+        question: "Password is an example of Inherence Factor",
+        correctAnswer: 'False'
     }
 ];
 
@@ -61,11 +76,6 @@ var normalQuestion = [
         correctAnswer: 'D'
     },
     {
-        type: 3,
-        question: "The /'s/' in HTTP/'S/' stands for _____.",
-        correctAnswer: ['aa', 'bbb', 'cccc']
-    },
-    {
         type: 0,
         question: "Which of the following is NOT a class of Authentication Factor?",
         answers: {
@@ -75,6 +85,39 @@ var normalQuestion = [
             D: 'Inherence Factor'
         },
         correctAnswer: 'A'
+    },
+    {
+        type: 0,
+        question: "Which of the following is NOT an example of Ownership Factor",
+        answers: {
+            A: 'ID card',
+            B: 'PIN',
+            C: 'Security token',
+            D: 'Mobile devices'
+        },
+        correctAnswer: 'B'
+    },
+    {
+        type: 2,
+        question: "Which of the following(s) is/are correct about Secure Socket Layer?",
+        answers: {
+            A: 'Certificate is usd to generate session key',
+            B: 'Session key is shared by both entities',
+            C: 'After generating session, both entity will use session key to communicate',
+            D: 'If the address scheme is https, it means the website is using SSL',
+            E: 'The \'s\' in HTTPS stands for \'secret\''
+        },
+        correctAnswer: ['B', 'C', 'D' ]
+    },
+    {
+        type: 3,
+        question: "The process of using both client and server authenication is called _____",
+        correctAnswer: ['mutual', 'authentication']
+    },
+    {
+        type: 1,
+        question: "Inherence Factor should be unique for each user",
+        correctAnswer: 'True'
     }
 ]
 
@@ -101,6 +144,39 @@ var hardQuestion = [
         },
         correctAnswer: 'D'
     },
+    {
+        type: 2,
+        question: "Which of the following statement(s) is/are TRUE about SSL",
+        answers: {
+            A: 'Private key should always keep secret unless the server asks for it',
+            B: 'Private key can be derived from public key',
+            C: 'Even if the hacker gets the seeion key, it still cannot decrypt the data in the secured channel',
+            D: 'The server will never ask for the public key of an client',
+            E: 'The server will never ask for the private key of an client',
+        },
+        correctAnswer: ['E']
+    },
+    {
+        type: 1,
+        question: "Authentication makes the network secure by permitting only authenticated user to access the resources",
+        correctAnswer: 'True'
+    },
+    {
+        type: 1,
+        question: "Failing to authenticate oneself in the website will be prohibited from entering the website again",
+        correctAnswer: 'False'
+    },
+    {
+        type: 1,
+        question: "Once set, the password can no longer be changed",
+        correctAnswer: 'False'
+    }
+    ,
+    {
+        type: 1,
+        question: "Inherence Factor Authenticationis usually more secured than Knowledge Factor Authentication",
+        correctAnswer: 'True'
+    }
 ]
 
 var quizContainer = document.getElementById('quiz');
@@ -134,7 +210,7 @@ function generateQuiz(quizQuestions, quizContainer, resultContainer, submitButto
     
     submitDiv.classList.remove('hidden');
 
-    var numOfQuestion = 2;
+    var numOfQuestion = 5;
 
     //Randomize quiz
     for (var i=quizQuestions.length-1;i>0;i--){
@@ -239,6 +315,7 @@ function generateQuiz(quizQuestions, quizContainer, resultContainer, submitButto
                     for (var j=0; j< blanks.length; j++){
                         userAnswer[j] = blanks[j].value;
                     }
+                    console.log(userAnswer.join() +"&&"+ quizQuestions[i].correctAnswer.join())
                     if (userAnswer.join() == quizQuestions[i].correctAnswer.join()){
                         score++;
                         document.getElementById('Q'+i).style.color = 'springgreen';

@@ -110,11 +110,11 @@ app.post('/register', function(req, res){
             //If flag then store credential in db
             connection.query("insert into wa_user (username, password) values ('"+username+"', '"+pwHash+"')")
 
-            pool.releaseConnection(connection);
+            db.releaseConnection(connection);
             returnCode = {status: 0}
             return res.json(returnCode);
         } else {
-            pool.releaseConnection(connection);
+            db.releaseConnection(connection);
         }
     }).catch(function(err) {
         console.log(err);
@@ -140,7 +140,7 @@ app.post('/login', function(req, res){
         //Check if username exists
         connection = conn;
         var result = connection.query("select username, password from wa_user where username='"+username+"'")
-        pool.releaseConnection(connection);
+        db.releaseConnection(connection);
         return result;
     }).then(function(result){
         //No such user
@@ -182,7 +182,6 @@ app.get("/loginStatus", function(req,res){
     } else {
         returnCode = {status: 'guest'}
     }
-    console.log(returnCode)
     res.json(returnCode);
     return;
 })
@@ -367,16 +366,118 @@ app.post('/userQuizChart', checkAuth, function(req, res){
 
 })
 
-app.post('/adminQuizStat', authCheck, function(req, res){
-    
+// ----- Admin report chapter -----
+app.post("/adminChapter", checkAuth, function(req, res){
+
     db.getConnection().then(function(conn){
-        conn.query("select COUNT(*) as count, AVG(score) from wa_quiz GROUP BY difficulty").then(function(result){
-            resultArr = JSON.parse(JSON.stringify(result));
-            console.log(resultArr);
+
+        var c0 = 0, c1 = 0, c2 = 0;
+
+        //Chapter 0
+        conn.query("SELECT chapter, count(*) as count FROM wa_chapter group by chapter").then(function(result){
+
+            var resultArr = JSON.parse(JSON.stringify(result));
+            
+            conn.query("select count(*) as userCount from wa_user").then(function(result){
+                data = [];
+                data[0] = JSON.parse(JSON.stringify(result));
+                data[1] = resultArr;
+                
+                res.json(data);
+            })
         })
-        
+        db.releaseConnection(conn);    
+    })
+})
+
+
+// ----- Admin report quiz stat -----
+
+app.post('/adminQuizStat', checkAuth, function(req, res){
+
+    db.getConnection().then(function(conn){
+        conn.query("select COUNT(*) as count, AVG(score) as avg from wa_quiz GROUP BY difficulty").then(function(result){
+            resultArr = JSON.parse(JSON.stringify(result));
+            res.json(resultArr);
+            return
+        })
+
         db.releaseConnection(conn);
     })
+})
+
+// ----- Admin report quiz leaderboard -----
+
+app.post('/adminQuizLeaderBoard', checkAuth, function(req, res){
+
+    db.getConnection().then(function(conn){
+
+        conn.query("SELECT username, difficulty, AVG(score) as avg, COUNT(*) as count FROM wa_quiz GROUP BY difficulty, username ORDER BY difficulty, avg DESC").then(function(result){
+            resultArr = JSON.parse(JSON.stringify(result));
+
+            var data = [];
+            var arr0 = [], arr1 = [], arr2 = [];
+            var resultArr = JSON.parse(JSON.stringify(result));
+
+            for (var i = 0; i < resultArr.length; i++){
+                switch(resultArr[i].difficulty){
+                    case 0:
+                        arr0.push(resultArr[i]);
+                        break;
+                    case 1:
+                        arr1.push(resultArr[i]);
+                        break;
+                    case 2:
+                        arr2.push(resultArr[i]);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            data = [arr0, arr1, arr2];
+            res.json(data);
+            return
+
+        })
+
+        //res.json(quizArr);
+        db.releaseConnection(conn);
+    })
+})
+
+// ----- Load admin quiz chart -----
+
+app.post('/adminQuizChart', checkAuth, function(req, res){
+
+    db.getConnection().then(function(conn){
+
+        conn.query("SELECT difficulty, score, count(*) as count FROM wa_quiz GROUP BY difficulty, score ORDER BY difficulty, score").then(function(result){
+            var data = [];
+            var arr0 = [], arr1 = [], arr2 = [];
+            var resultArr = JSON.parse(JSON.stringify(result));
+            for (var j = 0; j < resultArr.length; j++){
+                switch(resultArr[j].difficulty){
+                    case 0:
+                        arr0.push(resultArr[j]);
+                        break;
+                    case 1:
+                        arr1.push(resultArr[j]);
+                        break;
+                    case 2:
+                        arr2.push(resultArr[j]);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            data = [arr0, arr1, arr2];
+            res.json(data);
+            return
+        })
+        db.releaseConnection(conn);
+    })
+
 })
 
 const port = process.env.PORT || 3000;
