@@ -8,6 +8,16 @@
     text-align: center !important;
 }
 
+.modern-button>div{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.modern-button>span{
+    font-style: italic;
+    font-size: 18px;
+}
+
 .fa-angle-double-right, .fa-angle-double-left{
     font-size: 30px !important;
     vertical-align: middle;

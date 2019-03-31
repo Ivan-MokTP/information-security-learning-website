@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>PuiTech</title>
+        <title>Registration/Login</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <link rel="stylesheet" type="text/css" href="/css/userStyle.css">
         <!-- Font Awesome -->
@@ -33,25 +33,25 @@
                     <tbody>
                         <tr>
                             <td class="name">Username</td>
-                            <td class="box"><input class="styled" type="text" id="username" maxlength="20" required></td>
-                            <td class="msg" id="msg_user"></td>
+                            <td class="box"><input class="styled" type="text" id="usernameReg" maxlength="20" required></td>
+                            <td class="msg text-danger" id="msg_user"></td>
                         </tr>
                         <tr>
                             <td class="name">Password</td>
-                            <td class="box"><input class="styled" type="password" id="password1" required></td>
-                            <td class="msg" id="msg_pw1"></td>
+                            <td class="box"><input class="styled" type="password" maxlength="20" id="password1Reg" required></td>
+                            <td class="msg text-danger" id="msg_pw1"></td>
                         </tr>
                         <tr>
                             <td class="name">Confirm Password</td>
-                            <td class="box"><input class="styled" type="password" id="password2" required></td>
-                            <td class="msg" id="msg_pw2"></td>
+                            <td class="box"><input class="styled" type="password" maxlength="20" id="password2Reg" required></td>
+                            <td class="msg text-danger" id="msg_pw2"></td>
                         </tr>
                         <tr>
                             <td colspan="2">
                                 <div class="btn-center">
-                                    <button class="btn btn-info" onclick="Verify()" >Submit
+                                    <button class="btn btn-info" onclick="VerifyRegister()">Submit
                                     </button>
-                                    <button class="btn btn-secondary" onclick="Reset()">Reset
+                                    <button class="btn btn-secondary" onclick="ResetRegister()">Reset
                                     </button>
                                 </div>
                             </td>
@@ -63,7 +63,7 @@
         <!-- Scripts -->
         <div>
             <script src="/js/script.js" type="text/javascript"></script>
-            <script src="/js/registerRequest.js" type="text/javascript"></script>
+            <script src="/js/regNlogRequest.js" type="text/javascript"></script>
         </div>
 
     </body>

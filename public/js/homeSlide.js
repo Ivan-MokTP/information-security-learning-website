@@ -7,16 +7,16 @@ function SectionSlide(){
 
     slideDownSection.classList.remove("hidden")
 
-    $("#slideup-section").slideUp(1000, function(){
-        $("#slidedown-section").slideDown();
+    $(slideUpSection).slideUp(1000, function(){
+        $(slideDownSection).slideDown();
     })
 
 }
 
 window.onload = function(){   
     if (localStorage.shortcut == "true"){
-        document.getElementById("slideup-section").classList.add("hidden")
-        document.getElementById("slidedown-section").classList.remove("hidden")
+        slideUpSection.classList.add("hidden")
+        slideDownSection.classList.remove("hidden")
     } 
 }
 //<<<<< Section Slide <<<<<

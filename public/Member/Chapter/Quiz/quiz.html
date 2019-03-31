@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>PuiAcademy - Quiz</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/quizStyle.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+        <!-- Boostrap with JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- Body -->
+        <div>
+            <!-- Top bar -->
+            <div id="topbar"></div>
+            <!-- Main part -->
+            <div class="maindiv text-dark">
+                <div class="title">Practice to Excel!</div>
+                <p>Now you should be quite familiar with the concept if you paid attention. The best way is the take the quiz below to show how much you learned. Let's begin!</p>
+                <div class="text-center" id="quizChooser">
+                    Choose a diffculty from below:<br><br>
+                    <div class="row">
+                        <div class="col-4">
+                            <button class="btn btn-success large-btn" id='quizEasy'>Easy</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-warning large-btn" id='quizNormal'>Normal</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-danger large-btn" id='quizHard'>Hard</button>
+                        </div>
+                    </div>  
+                </div>
+                <p class="italic">For each question, follow the instruction here:</p>
+                <!-- Quiz -->
+                <ul class="list-group" id="quiz"></ul>
+                <span id="submit-div" class="hidden"><button class="btn btn-info" id="submit">Submit</button></span>
+                <span class="hidden" id="again"><button class="btn btn-info" onclick="Again()">Again</button></span>
+                <button class="btn btn-dark" id="home" onclick="GoToHome()">Home</button>
+                <div class="hidden" id="results">
+                    <table class="table">
+                        <tr>
+                            <th class="text-center" colspan="2" style="border-top: none;">---------- Result ----------</th>
+                        </tr>
+                        <tr>
+                            <td class="bold italic">Attempt</td>
+                            <td id="attemptContainer"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold italic">Score</td>
+                            <td id="scoreContainer"></td>
+                        </tr>
+                        <tr>
+                            <td class="bold italic">Completion Time</td>
+                            <td id="timeContainer"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!-- Scripts -->
+            <script src="/js/script.js" type="text/javascript"></script>
+            <script src="/js/quizCreator.js" type="text/javascript"></script>
+            <script src="/js/regNlogRequest.js" type="text/javascript"></script>
+        </div>
+
+    </body>
+</html>

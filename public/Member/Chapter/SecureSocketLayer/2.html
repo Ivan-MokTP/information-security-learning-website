@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>PuiTech</title>
+        <title>PuiAcademy - Secure Socket Layer</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -23,21 +23,19 @@
                 </div>
                 <div class="subdiv">
                     <div class="subtitle">
-                        Mutual Authentication
+                        Setting Up SSL
                     </div>
                     <p>
-                        SSL is usually a Mutual Authentication (or Two-Way Authentication) process. It means both server and client will have to send its certificate to another entity. Only when both entities validate the certificate of the other entity will the secured channel be established.
+                        Before using SSL, both sides have to set up an initial communication in order to generate a seesion key. The seesion is shared by and only known to the two sides. After that the both sides will encrypt transmitting data with session key, hance securing all the data within.
                     </p>
-                    <p>
-                        In simple word:<br>
-                        <span class="italic" style="padding-left: 20px">Server Authentication</span> + <span class="italic">Client Authentication</span> = <span class="bold">Mutual Authentication</span>
+                    <p> 
+                        In normal SSL, only Server Authentication is needed. The diagram is as follow:
                     </p>
-
-                    <img class="center" src="/img/MSSL.jpg"/>
+                    <img class="center" src="/img/SSL.jpg">
                     <ol>
                         <li>Client connects to the web server secured with SSL. Then client requests the server to identfy itself.</li>
-                        <li>Server sends a copy of its certificate and its public key. Client responds by sending a copy of its certificate to the server. (Here completes the Mutual Authentication process.)</li>
-                        <li>Both entities validate the certifcate of another entity. Then client creates a temporary session key using server's public key, and sends it to server.</li>
+                        <li>Server sends a copy of its certificate and its public key. </li>
+                        <li>Client validates the server's certifcate. Then client creates a temporary session key using server's public key, and sends it to server.</li>
                         <li>Server decrypts the session key using its own private key. Now both entities contain the same session key. They now use the common session key to encrypt data and transmit through the channel.</li>
                     </ol>
                 </div>
@@ -45,9 +43,9 @@
                     <ul class="pagination justify-content-center">
                         <li class="page-item"><a class="page-link" href="index.html">Page 1</a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="2.html">Page 2</a>
+                        <li class="page-item active"><a class="page-link">Page 2</a>
                         </li>
-                        <li class="page-item active"><a class="page-link">Page 3</a>
+                        <li class="page-item"><a class="page-link" href="3.html">Page 3</a>
                         </li>
                         <button class="btn btn-dark" onclick="GoToHome()">Home</button>
                     </ul>
@@ -57,6 +55,8 @@
         <div>
             <!-- Scripts -->
             <script src="/js/script.js" type="text/javascript"></script>
+            <script src="/js/regNlogRequest.js" type="text/javascript"></script>
+            <script src="/js/completeChapter.js" type="text/javascript"></script>
         </div>
     </body>
 </html>

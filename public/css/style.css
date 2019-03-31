@@ -28,6 +28,7 @@ html, body{
 
 div.maindiv{
     margin-top: 60px;
+    margin-bottom: 50px;
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
@@ -52,7 +53,11 @@ i.icon{
 }
 
 .hidden{
-    display: none;
+    display: none!important;
+}
+
+.block{
+    display: block!important;
 }
 
 @keyframes fadeupAnimation{
@@ -98,10 +103,6 @@ img#intro-img{
     width: 100%;
 }
 
-#quiz{    
-    padding-left: 20px;    
-}
-
 img.center{
     margin-left: auto;
     margin-right: auto;
@@ -142,6 +143,10 @@ thead{
     font-style: italic;
     border-top: 2px solid #343a40;
     border-bottom: 2px solid #343a40;
+}
+
+.btn{
+    display: inline!important;
 }
 
 
@@ -209,18 +214,18 @@ a.bar-item:hover{
     background-color: #4CAF50;
 }
 
-form.login{
+#login{
     width: 100%;
     float: right;
 }
 
-form.login>span{
+#login>span{
     vertical-align: middle;
     padding: 0;
     margin: 0;
 }
 
-form.login input{
+#login input{
     width: 40%;  
 }
 
