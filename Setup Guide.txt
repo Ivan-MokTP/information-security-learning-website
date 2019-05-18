@@ -1,3 +1,5 @@
+!!!This website is a school project and it connects to Polyu's database. Therefore, it requires connection to Polyu's WiFi in order to connect to database.!!!
+
 Requirement:
 1. Nodejs [v10.15.2]
 2. Npm [v6.4.1]
